@@ -1,0 +1,243 @@
+高性能WebServer设计与优化
+7 Mar 2017
+Tags: performance web-server  
+
+沉风
+myself659@163.com
+http://myself659.github.io/
+https://github.com/myself659
+
+
+
+* 内容 
+
+- 网络优化 
+修好路，走顺路
+- 架构设计
+什么指导思想呢? 
+- 系统优化
+充分利用  
+
+
+* 网络优化  
+
+- 基本流程 
+- 网卡优化 
+- 协议栈与应用优化 
+
+
+* 基本流程 
+
+- 接收流程
+- 发送流程
+
+* 接收流程 
+
+.image  pictures/pkt-rcv.png
+
+* 发送流程 
+
+.image  pictures/pkt-snd.png
+
+
+* 网卡 
+
+- 网卡类型  
+- 配置优化 
+- 新特性 
+
+
+* 网卡类型 
+
+- 物理网卡 
+  
+- 虚拟网卡
+  virtio, sriov  
+
+
+* 配置优化 
+
+- RSS 
+- RPS 
+- 限制网卡中断次数
+- GRO 
+
+
+* 新特性 
+
+- MSI-X 
+- IOMMU  
+- Posed Interrupt 
+- Interrupt 
+
+* 协议栈 
+
+- 上送方式 
+
+- IP层优化 
+
+- TCP优化  
+
+
+* 上送方式 
+
+- 中断方式 
+
+
+- NAPI方式 
+
+* IP层优化 
+
+- 根据情况关闭iptables  
+- 针对性配置Qos
+- 避免路由cache条目过多 
+
+
+* TCP优化 
+
+- 更快地建立和应用TCP连接  
+
+- 支持更多的并发连接  
+
+- 支持更多的在线连接 
+
+- 提高TCP连接的吞吐 
+
+- 降低TCP报文的延迟  
+
+- 优化拥塞控制 
+
+
+* 更快地建立和应用TCP连接 
+
+- Tcp Fast Open
+- Http Keepalive 
+- 应用支持Http2.0
+- 增大cwnd
+- 采用连接池   
+
+
+* 支持更多的并发连接 
+
+- 开启SO_REUSEPORT选项
+- 适当调大backlog  
+
+
+* 支持更多的在线连接 
+
+- 开启tcp_tw_reuse  
+- 开启tcp_tw_recycle 
+
+
+* 提高TCP连接的吞吐 
+
+- Throughput = Buffer Size / Latency 
+
+- 对于高延迟网络传输环境下，要加大接收与发送缓冲区大小
+
+- 开启Nagle 
+- 关闭TCP NODELAY 
+-  
+
+* 降低TCP报文的延迟
+
+- 关闭Nagle
+- 开启TSQ(TCP small queue)
+- 开启TCP NODELAY  
+
+* 优化拥塞控制 
+
+- Vegas vs Reno vs CUBIC vs bbr(kernel 4.9)
+
+- TSQ
+
+
+* 架构设计 
+
+- 技术 
+- 模型 
+  
+
+
+
+* 技术 
+
+- 并发
+
+- Epoll 
+  ET VS LT 
+
+- RPC 
+  服务之间的桥梁 
+- 异步
+  
+- 协程 
+  libco 
+- 无锁化
+  CAS, memory barrier
+  Lock-free(Queue,Ring Buffer, Stack)  
+- 缓存 
+  redis, memcache, 进程内缓存 
+- 数据库
+  数据分布，读写分离，数据迁移  
+
+* 模型 
+
+- ReActor
+- ProActor 
+- 流水线 
+ 
+
+* 系统优化 
+
+- CPU  
+- 内存
+- 算法 
+- 工具   
+
+
+* CPU 
+
+- cpu affanity 
+- load banlance 
+- 进程调度优化 
+- 减少context切换 
+- 利用硬件，降低CPU负载   
+
+* 内存 
+
+- 内存池 
+- 代码cache友好
+  时间有效性，空间有效性 
+- 降低cache冲突
+  数据结构优化，算法优化，代码级优化   
+- 站在巨人肩膀上参考nginx式用户态内存管理
+
+* 算法 
+
+- 空间复杂度
+
+- 时间复杂度 
+
+- Example 
+
+* 工具 
+
+- googleperf 
+- perf 
+- OProfile 
+- 更多
+.link http://www.brendangregg.com/ 参考Brendan D. Gregg
+
+
+* 欢迎交流与指正
+
+
+
+
+
+
+
+
+
+

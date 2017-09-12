@@ -1,0 +1,133 @@
+高性能WebServer网络优化
+7 Mar 2017
+Tags: performance web-server  
+
+沉风
+myself659@163.com
+http://myself659.github.io/
+
+* WebServer 
+-  高吞吐
+-  低延迟 
+
+* 设计原则 
+
+- 并行
+- 异步
+- 可扩展 
+- 简单
+- 无阻塞     
+
+* 报文接收流程
+
+.image  pictures/pkt-rcv-3-stage.png
+
+- 上送协议栈
+- 协议栈处理 
+- 用户态处理 
+
+* 上送协议栈
+
+
+- 中断绑定cpu
+- 中断负载均衡 
+- RSS
+- RPS 
+- SRIOV 
+
+
+
+
+* 协议栈处理
+
+* IP层优化 
+
+- 考虑关闭iptables
+- 针对性的Qos配置 
+ 
+
+* 更快地建立和应用TCP连接 
+
+- Tcp Fast Open
+- Http Keepalive 
+- Support Http2.0
+- 增大cwnd   
+
+
+* 支持更多的并发连接 
+
+- 开启tcp_reuseport
+- 适当调大backlog  
+
+
+* 支持更多的在线连接 
+
+- 开启tcp_tw_reuse  
+- 开启tcp_tw_recycle  
+
+* 提高TCP连接的吞吐 
+
+- Throughput = Buffer Size / Latency 
+
+- 对于高延迟网络传输环境下，要加大接收与发送缓冲区大小
+
+- 开启Nagle 
+
+* 降低TCP报文的延迟
+
+- 关闭Nagle 
+
+* 优化拥塞控制 
+
+- Vegas vs Reno vs CUBIC vs bbr(kernel 4.9)
+
+- TSQ
+
+* TCP连接间公平
+
+* 用户态编程  
+
+
+* 主要思路 
+
+- 异步化 
+- 网络请求与响应流水化 
+- Reactor
+- Proactor 
+
+* Epoll 
+
+- ET vs LT 
+
+
+* 高效读 
+
+- readv 
+- gatter recv
+- 获取字节流的边界 
+
+* 高效写 
+
+- writev 
+- sendfile  
+
+
+
+* 系统优化 
+
+- 内存预分配  
+- 减少系统调用
+- 内存分配 
+
+
+
+
+
+* 总结 
+
+- 充分利用硬件  
+- 针对场景优化
+- TCP优化是重点 
+
+
+* 参考 

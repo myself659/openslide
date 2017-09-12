@@ -1,0 +1,332 @@
+IPFS 简介
+Subtitle of document
+15:04 2 Jan 2006
+Tags: IPFS, P2P
+
+Wubo
+blockchian engineer, JBI
+myself659@163.com
+https://myself659.github.io  
+
+* 内容  
+
+- IPFS简介和框架
+- IPFS设计分析  
+- IPFS应用场景
+
+
+* IPFS简介和框架  
+
+- IPFS相关概念 
+- IPFS的特点 
+- IPFS产品与应用案例  
+
+
+* 什么是IPFS 
+
+- The InterPlanetary File System  
+- 一句话：Content Addressed, Versioned, P2P File System
+- 由Juan Benet在2013.12开始发起，属于Protocol Labs  
+- 技术组合：DHT, BitTorrent, Git,SFS
+- 数据模型: Merkle DAG 
+- IPFS=DHT+BT+Git+SFS+Web 
+- Juan Benet  
+
+
+.link [https://github.com/ipfs] github开源地址
+
+
+-  去中心化文件系统连接所有设备 
+-  高性能，高吞吐
+-  永久的Web  
+
+* IPFS的目的 
+
+- 取代HTTP，成为Web的标准 
+- 提供更好的网络：
+更快Faster
+更安全 Safer
+开放 Distributed
+Permanent 
+Smarter
+Offline  
+Serve data from everywhere 
+Serve data to everywhere
+减少网络带宽开销（减少网络传输的跳数 ）
+
+
+
+* IPFS与Blockchain  
+
+区块链不适合保存文件等大块数据 
+区块链不适合保存大量的数据 
+
+IPFS与Blockchain 天生一对 
+
+IPFS解决区块链不适合保存大量的数据问题  
+不可更改提供永久链接  
+存储在IPFS系统的文件信息可保存到blockchain 
+
+// START OMIT  
+The contribution of IPFS is simplifying, 
+evolving, and connecting proven techniques 
+into a single cohesive system,
+greater than the sum of its parts 
+// END OMIT  
+
+* IPFS的特点  
+
+： 没有对比，就没有优势  
+
+* HTTP问题 
+
+- HTTP下载文件在同一时间只能从一台机器下载  
+- IPFS支持同时从多台机器下载一个文件（文件会被打散）
+- 相比于HTTP方式下载，IPFS方式下载文件消费带宽少
+- 在IPFS，没有数据的重复，所以能够有效地分散
+
+： 常见的面试题，如何提高文件下载速度？ 
+
+* 版本管理  
+
+- IPFS版本管理实现采用Git 
+
+* 去中心化 
+
+- 中心化容易造成垄断  
+
+* 网络依赖 
+
+- 它不依赖于骨干网络  
+- 目前的应用程序依赖于骨干
+- IPFS具有更高的可用性 
+
+： 支付宝光纤
+
+* IPFS应用 
+
+
+*  Hash计算，保证唯一性 
+
+*  避免复制和版本管理
+
+直接引用  
+
+* 文件分开保存 
+
+： 避免将鸡蛋放到同一个篮子里 
+
+* 基于Hash查找  
+
+* 去中心化命名空间 
+
+： 还再深入思考，解决名称冲突 
+
+* IPFS设计 
+
+* 技术结合 
+
+Routing - DHT  
+Block Exchanges - BitTorrent  
+Version Control Systems - Git 
+Self-Certified Filesystems - SFS  
+
+* DHT
+
+-  Kademlia  
+
+- S/Kademlia DHT  
+
+- Coral DSHT 
+
+
+* BitTorrent  
+
+- fit-for-fit策略  
+- 难度优先的原则  
+
+* IPFS分解 
+
+
+
+* 其他去中心化存储 
+
+ - Swarm  
+ - https://github.com/ethersphere/go-ethereum/wiki/IPFS-&-SWARM
+
+
+ * IPFS vs SWarm  
+
+ - 定位
+ - 成熟度 （时间上早 节点已经在应用了）
+ - 社区  
+ - 技术实现 
+ - 易用性 
+ - 应用场景  
+ - swarm 有以太坊生态支持 
+ - Swarm is very specifically meant to be part of the Ethereum ecosystem
+ - 兼容性  
+
+* 易碎的集中式网络服务
+
+- SPOF单点故障 
+- 高可用性  
+- MITM攻击（中间人攻击）
+- DDOS攻击  
+
+* 查找内容的流程 
+
+peer routing 
+
+地址路由 + 内容路由
+路由开销加大 
+
+
+* 大文件处理  
+
+
+* Design Content  
+
+- Identities - manage node identity generation and verification
+
+- Network - manages connections to other peers, uses various underlying network protocols
+
+- Routing - maintains information to locate specific peers and objects. 
+Responds to both local and re- mote queries. 
+Defaults to a DHT, but is swappable
+- Exchanges
+- objects 
+- Files
+- Naming  
+
+
+*  Identities  
+
+- 一个节点由节点ID标识  
+- 节点ID生成 利用密钥生成 
+
+
+
+* IPRS (InterPlanetary Record System) 
+
+
+
+
+
+* 权限控制  
+
+文件所有者 
+
+* 为什么不提供删除方法？
+
+* 思考更多的技术细节  
+
+1. 版本兼容 
+2. ipfs-cli 与ipfs-daemon之间的版本需要一致 
+
+
+
+
+* 展望 
+
+- 降低商业成本  降低企业成本  对云存储服务商有冲突  
+- 省了网络安全的成本  想想阿里的安骑士花费，ddos安全 
+- 大量的矿工存在  
+
+： 算一笔帐 
+
+
+* IPFS背后的精神  
+
+- 技术上百ming神功 
+- 海纳百川
+- 团队在2013年就开始，到现在才考虑商业化 
+- 伟大的愿景 技术上取代HTTP，兼容HTTP 商业开启下一代去中心化存储  
+
+* 参考  
+
+1. https://github.com/ipfs/specs/tree/master/architecture 
+2. https://github.com/multiformats/multihash
+3. https://github.com/libp2p/specs 
+4. https://www.icoage.com/?p=D&id=38
+5. https://ipfs.io/ipfs/QmNhFJjGcMPqpuYfxL62VVB9528NXqDNMFXiqN5bgFYiZ1/its-time-for-the-permanent-web.html 
+
+* 相关项目 
+
+- Storj <https://storj.io/> 
+- Gitchain <http://gitchain.org/>
+- ZeroTier One <https://www.zerotier.com/> 
+- MaidSafe <https://maidsafe.net>  
+- SIA < http://sia.tech/> 
+- Upspin <https://upspin.io> 
+- ZeroNet <https://zeronet.io/> 
+- BigchainDB  https://www.bigchaindb.com/
+- Ethereum Swarm  https://www.ethereum.org/
+
+* Storj  
+
+Blockchain-based, 
+end-to-end encrypted, 
+distributed object storage, where only you have access to your data.
+
+with a blockchain added to create a marketplace 
+for buying or renting out disk space on the network
+
+*  SIA 
+
+与storej类似 
+
+* MaidSafe  
+
+主打安全
+A secure home for all your data 
+
+* ZeroNet  
+
+Open, free and uncensorable websites, 
+using Bitcoin cryptography and BitTorrent network
+
+* Ethereum Swarm 
+
+Swarm is a distributed storage platform and content distribution service, 
+a native base layer service of the ethereum web 3 stack.
+The primary objective of Swarm is to provide a sufficiently decentralized 
+and redundant store of Ethereum’s public record,
+in particular to store and distribute dapp code and data 
+as well as block chain data.
+
+* Tips 
+
+- 介绍篇   定义 定位 历史 发展  
+- 原理篇   基本原理   （重点）
+- 架构篇   原理落地到代码的指导  （重点）
+- 实践篇   ipfs 各种命令实践 
+- 应用篇  案例case github 
+- 未来篇  前景分析 
+- 代码篇  ipns流程 
+
+* 未来篇 
+
+IPFS+Filecoin = ？ 
+
+技术+商业经济= ？
+
+区块链让商业流动更快
+
+密码学与P2P 作为点对点通信的协议 
+
+* 可以为IPFS作些事情  
+
+- ipfs add 需要点击确认 
+- ipfs add 需要commit确认 类似git 
+- ipfs 增加命令 方便查看当前目录下的内容  
+
+
+
+
+
+
+
+
+
+

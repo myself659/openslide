@@ -1,0 +1,92 @@
+IPFS 简介
+Subtitle of document
+15:04 2 Jan 2006
+Tags: IPFS, P2P
+
+Wubo
+blockchian engineer, JBI
+myself659@163.com
+https://myself659.github.io  
+
+* 编译  
+
+// START OMIT 
+$ go get -u -d github.com/ipfs/go-ipfs
+
+$ cd $GOPATH/src/github.com/ipfs/go-ipfs
+$ make install
+
+// END OMIT
+
+
+* URL 
+
+https://gateway.ipfs.io/ipfs/QmS5Q9tjQD6oGwDX2rdeG9nKFqPDcy4DWf7kjQzStnGYNB/icon.png 
+
+https://gateway.ipfs.io/ipfs/QmS5Q9tjQD6oGwDX2rdeG9nKFqPDcy4DWf7kjQzStnGYNB 
+
+
+http://localhost:8080/ipfs/QmVed7C73A7CvSPmxU1gkyUfn5hMDTaR8pTgpaswu6E1YU 
+
+
+https://gateway.ipfs.io/ipfs/QmUr5tRGco2hGbsEdBw5QT6RXZCVVtB2Qc3j5nhRJDQu7j  
+
+https://gateway.ipfs.io/ipfs/QmZh7txJL7WfjpY83eT2Jt4hHNyxqJiEp82LXpcuXEfWKY
+
+https://ipfs.io/ipns/Qmd8KURgK4VTVK5Ura5wyAzsCZYpZZSHs8EFB8UGnGBtSu
+
+https://gateway.ipfs.io/ipns/Qmd8KURgK4VTVK5Ura5wyAzsCZYpZZSHs8EFB8UGnGBtSu
+
+https://gateway.ipfs.io/ipfs/QmZh7txJL7WfjpY83eT2Jt4hHNyxqJiEp82LXpcuXEfWKY/ipfs.pdf
+
+
+
+* ipfs swarm 
+
+
+-  ipfs swarm  peers    --streams
+
+
+* ipfs dht 
+
+ipfs  dht  get   QmVed7C73A7CvSPmxU1gkyUfn5hMDTaR8pTgpaswu6E1YU 
+
+
+
+* 基于ipfs建立一个网站  
+
+静态内容容易解决 
+
+但是数据库怎么办  
+
+数据库 天然具有中心化趋势  
+
+利用区块链来实现的  解决数据库问题  但是不是所有网站都适合用数据库 
+
+ipfs + db = website  是否可行？
+
+
+* ipfs name 
+
+ipfs  name   publish    /ipfs/QmZh7txJL7WfjpY83eT2Jt4hHNyxqJiEp82LXpcuXEfWKY  
+
+Published to Qmd8KURgK4VTVK5Ura5wyAzsCZYpZZSHs8EFB8UGnGBtSu: /ipfs/QmZh7txJL7WfjpY83eT2Jt4hHNyxqJiEp82LXpcuXEfWKY
+
+ipfs name resolve   Qmd8KURgK4VTVK5Ura5wyAzsCZYpZZSHs8EFB8UGnGBtSu
+/ipfs/QmZh7txJL7WfjpY83eT2Jt4hHNyxqJiEp82LXpcuXEfWKY
+
+ipfs resolve -r /ipns/Qmd8KURgK4VTVK5Ura5wyAzsCZYpZZSHs8EFB8UGnGBtSu
+/ipfs/QmZh7txJL7WfjpY83eT2Jt4hHNyxqJiEp82LXpcuXEfWKY
+
+改变hash并不影响结果  
+
+取决于你发布的密钥 
+
+Qmd8KURgK4VTVK5Ura5wyAzsCZYpZZSHs8EFB8UGnGBtSu (并没有变化)
+
+如何进行权限管理？ 
+如何进行验证？ 只给付费用户观看 （增加这个功能 ）
+
+: https://github.com/ipfs/examples/tree/master/examples/ipns
+
+
