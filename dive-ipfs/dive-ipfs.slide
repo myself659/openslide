@@ -250,6 +250,10 @@ Defaults to a DHT, but is swappable
 3. https://github.com/libp2p/specs 
 4. https://www.icoage.com/?p=D&id=38
 5. https://ipfs.io/ipfs/QmNhFJjGcMPqpuYfxL62VVB9528NXqDNMFXiqN5bgFYiZ1/its-time-for-the-permanent-web.html 
+6. http://www.qukuaiwang.com.cn/news/1838.html 
+7. http://datamarket.atman360.com/120703 
+8. http://mashable.com/2017/04/24/is-silicon-valley-new-internet-possible-or-not/#pNDSCepE3Pqo
+
 
 * 相关项目 
 
@@ -320,6 +324,7 @@ IPFS+Filecoin = ？
 - ipfs add 需要点击确认 
 - ipfs add 需要commit确认 类似git 
 - ipfs 增加命令 方便查看当前目录下的内容  
+
 
 
 

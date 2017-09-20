@@ -1,0 +1,276 @@
+Golang基础
+
+15:04 19 Sep 2017
+Tags: Golang
+
+Wubo
+myself659@163.com
+https://myself659.github.io
+
+
+* 内容 
+- 概述 
+- 语法 
+- channel
+- goroutine 
+- 开发环境
+- 常用命令 
+- 学习 
+
+* 概述
+
+- 出身 
+- 特点 
+- 编程哲学
+
+* 出身 
+
+- google出品
+
+-  肯∙汤普逊（Ken Thompson）：设计了B语言和C语言，创建了Unix和
+Plan 9操作系统，1983年图灵奖得主，Go语言的共同作者。 
+
+-  罗布·派克（Rob Pike）：Unix小组的成员，参与Plan 9和Inferno操作系
+统，参与 Limbo和Go语言的研发，《Unix编程环境》作者之一
+- 还有很多大牛
+
+* 特点 
+
+- 高并发 
+- 高性能 
+- 安全
+- 快编译，无依赖
+- 易移植
+- 简单
+- 基础库
+- 开发效率高（垃圾回收） 
+
+
+* 编程哲学 
+
+- KISS 
+- 提倡组合，反对面向对象  
+- 抽象定义，实现体现细节 
+
+
+* 语法 
+
+- 数据类型 
+- 关键字 
+- 表达式
+- 新特性 
+
+
+* 数据类型-基础类型 
+
+- 整形: int8, int16, int, int32, int64 
+- 无符号整型：uint8, uint16, uint, uint32, uint64
+- 浮点型: float32, flaot64
+- 复数类型：complex64，complex128 
+- 字节类型：byte 
+- 布尔类型: bool
+- 错误类型: error
+- 字符类型：rune 
+
+
+
+* 数据类型-复合结构
+
+- 数组：[size]Type
+- 切片(slice)：[]Type
+- 映射(map)：map[Type]type 
+- 指针： *Type 
+- 结构体: Struct 
+- 通道: chan 
+- 接口：interface 
+
+: 不支持隐式转换
+: 不支持指针运算操作
+
+
+* 关键字 
+
+- var, const 
+- package, import  
+- func, return, defer 
+- go
+- select, chan 
+- type 
+- interface
+- struct  
+- map 
+- range 
+- break、case、continue、for、fallthrough、else、if、switch、goto、default
+
+
+* 表达式 
+- *, /, %, <<, >>, &, &^ 
+- +, -, |, ^ 
+- ==, != , <,  <=,  >= 
+- && 
+- || 
+
+* 与C/C++语言不同点 
+
+- 数据类型不支持隐式转换 
+- 不支持指针运算操作 
+- switch分支执行结果直接退出switch语句(默认支持break)
+- 没有extern, static, private, public, protecd 
+- 没有继承,但是有新玩意interface
+- C/C++头文件引用(include)，golang是包引用(import)
+
+* defer 
+
+defer 延迟执行，当函数执行结束前执行一次 
+
+* Once 
+
+Go语言提供了一个Once类型来保证全局的唯一性操作。Once的Do
+()方法可以保证在全局范围内只调用指定的函数一次，而且所有其他
+goroutine在调用到此语句时，将会先被阻塞，直至全局唯一的
+Once.Do ()调用结束才继续 
+
+* Once 
+
+.code  -numbers once.go  
+
+.play once.go  
+
+* panic与recover 
+
+.code -numbers panic.go   
+
+.play panic.go 
+
+
+* interface  
+
+.code -numbers interface.go 
+
+.play interface.go  
+
+* channel 
+
+- 定义 
+- 特点
+- 总结 
+
+* 定义 
+
+-  channel为goroutine之间通信服务 
+- Do not communicate by sharing memory; instead, share memory by communicating. 
+
+
+* 特点 
+
+- FIFO
+- 原子性 
+- 两种模式：同步模式 vs 队列模式 
+- 包容万象(interface, func ...)
+
+* 总结  
+
+.image  images/channelstate.jpg 
+
+: https://myself659.github.io/go-channel-feature/
+
+* goroutine  
+
+- 定义 
+- 周期 
+- 应用 
+
+* 定义 
+
+goroutine是一种协程
+实现同步编程，异步执行
+特点是轻，支持高并发
+
+
+* 周期 
+- 启动 go funcname
+- 结束 执行结束或者主进程退出 
+
+* 应用 
+
+- channel与goroutine: 最佳搭挡 
+- 防止goroutine leak 
+- 防止goroutine deadlock
+
+
+: 不讲原理，只作介绍
+
+
+* 开发环境
+
+- 安装
+- IDE 
+
+* 安装  
+
+- 下载解压到GOROOT位置  
+- 设置GOPATH 
+
+* IDE  
+
+- VSCODE  
+- sublime text  
+- IntelliJ 
+- vim 
+- LiteIDE  
+
+推荐VSCODE  
+
+* VSCODE
+
+- gofmt 
+- autocomplete 
+- godef 
+- goimports  
+
+
+.link https://www.youtube.com/watch?v=uBjoTxosSys  Go Tooling in Action  
+.link https://www.youtube.com/watch?v=eg4jUYe1vpI  7 reasons why I switched to Visual Studio Code from Sublime Text
+
+* 常用命令 
+
+- go build：编译工具
+- go clean：清除对象文件
+- go run：编译执行Go程序
+- go fmt：格式化
+- go get：下载并安装依赖包
+- go install：编译并安装依赖包
+- go test：官方测试框架
+- go doc：查看文档
+- go env：打印Go环境变量
+- go version：打印Go版本
+
+
+* 学习 
+
+- 实践
+- 资源 
+
+* 实践
+
+- 入门 
+
+.link  https://gobyexample.com/ Go by example  
+.link  http://go.yami.io/ Go by example(中文) 
+.link  https://tour.golang.org  Tour of Go
+.link  https://github.com/GoesToEleven/GolangTraining   GolangTraining
+
+- 进阶 
+
+.link  https://github.com/GoesToEleven/golang-web  golang-web  
+.link  https://golang.org/doc/   godoc 
+
+
+* 资源   
+
+.link  https://golang.org/pkg/  Go packge 
+.link  https://github.com/golang/talks  talks
+.link  https://github.com/avelino/awesome-go/ awesome-go  
+.link  https://docs.hacknode.org/gopl-zh  Go语言圣经（中文版） 
+
+
