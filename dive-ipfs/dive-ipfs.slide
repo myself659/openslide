@@ -30,7 +30,8 @@ https://myself659.github.io
 - 技术组合：DHT, BitTorrent, Git,SFS
 - 数据模型: Merkle DAG 
 - IPFS=DHT+BT+Git+SFS+Web 
-- Juan Benet  
+- Juan Benet 
+- a protocol to upgrade the web  
 
 
 .link [https://github.com/ipfs] github开源地址
@@ -84,8 +85,10 @@ greater than the sum of its parts
 - IPFS支持同时从多台机器下载一个文件（文件会被打散）
 - 相比于HTTP方式下载，IPFS方式下载文件消费带宽少
 - 在IPFS，没有数据的重复，所以能够有效地分散
+- 隐私问题，没有保证的隐私保护
 
-： 常见的面试题，如何提高文件下载速度？ 
+： 常见的面试题，如何提高文件下载速度？
+： AWS s3故障 https://www.theverge.com/2017/2/28/14765042/amazon-s3-outage-causing-trouble 
 
 * 版本管理  
 
@@ -122,6 +125,15 @@ greater than the sum of its parts
 
 ： 还再深入思考，解决名称冲突 
 
+* IPFS store 
+- key-value stores 
+- traditional relational databases
+- linked data triple stores 
+- linked document publishing systems 
+- linked  communications  platform 
+- cryptocurrency  blockchains 
+
+
 * IPFS设计 
 
 * 技术结合 
@@ -133,7 +145,7 @@ Self-Certified Filesystems - SFS
 
 * DHT
 
--  Kademlia  
+- Kademlia  
 
 - S/Kademlia DHT  
 
@@ -167,7 +179,7 @@ Self-Certified Filesystems - SFS
  - Swarm is very specifically meant to be part of the Ethereum ecosystem
  - 兼容性  
 
-* 易碎的集中式网络服务
+* 易碎的集中式(中心化)网络服务
 
 - SPOF单点故障 
 - 高可用性  
@@ -208,8 +220,6 @@ Defaults to a DHT, but is swappable
 
 
 * IPRS (InterPlanetary Record System) 
-
-
 
 
 
@@ -325,6 +335,29 @@ IPFS+Filecoin = ？
 - ipfs add 需要commit确认 类似git 
 - ipfs 增加命令 方便查看当前目录下的内容  
 
+
+
+* 网络  
+
+- 网络天生就应该是分布式 
+
+* 相关代码 
+
+- 自描述的数据类型
+.link multiformats  https://github.com/multiformats/multihash  
+- secure data structures
+.link  IPLD  https://github.com/ipld 
+- distributed naming  
+
+.link  https://github.com/ipfs/specs  IPNS  
+
+- Distributed and fast updates 
+
+.link  Pubsub  https://github.com/libp2p/pubsub 
+
+- Process addressing 
+
+.link libp2p https://github.com/libp2p
 
 
 

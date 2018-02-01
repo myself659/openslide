@@ -1,0 +1,164 @@
+hashgraph介绍
+Subtitle of document
+15:04 2 Dec 2017
+Tags: hashgraph, DAG 
+
+沉风
+blockchian engineer, JBI
+myself659@163.com
+https://myself659.github.io  
+
+
+* 要点 
+
+- 分布式会话管理
+- 自主主义的身份
+- 获得GDPR的有效同意（一般数据保护规则） 共识 
+- 其他   google正在研究SCIM
+
+* 分布式会话管理 
+
+- 为什么需要分布式会话管理 
+- 连续认证的必要性及问题
+- 单一注销（SLO）挑战
+
+* 连续认证的必要性及问题
+
+- 基于密码的认证限制  （有必要站在泄漏的前提上）
+- 单点登录扩散
+
+使用移动设备和生物识别技术 
+
+可以删除跨域的会话 
+
+* 单点登录扩散 
+
+- 客户端多元化 （浏览器，手机）
+- 协议多样化 OpenID Connect / OAuth2  SAML 
+
+-确定会话被删除是件很困难的事情 
+
+考虑会话扩展和暂停等场景几乎是不可能的
+
+* 在身份层下面构建分类帐层  
+- 包含会话管理的身份层的较低层的一致性
+有必要建立一个隐藏的分类帐（分类帐）层
+
+身份和会话可以关联 
+确保分布式环境的一致性  
+
+一张图说明问题 
+
+
+* hashgraph核心概念 
+
+- Transactions  
+任何成员可以随时进行交易 
+所有成员都接受交易并形成共识
+- Fairness 
+少数攻击者组织欺骗性地影响交易的顺序这很难做到
+- Gossip 
+所有成员知道的信息都是其他成员随机选择的它扩散反对
+- Hashgraph 
+
+一个数据结构，记录谁把这个gossip给谁，按照什么顺序
+
+- Gossip about gossip
+
+Gossip的历史本身就是一种Gossip 
+
+- Virtual voting 
+因为每个成员都有一个hashgraph的副本，所以你没有真正的投票
+你知道你应该投票
+
+- Famous witnesses
+证明交易背景的最小必要事件
+被称为证人，交易后立即成员最多
+把收到的交易称为着名的证人
+
+
+* 如何确认区块链中的分类帐数据 
+- 由链的长度决定
+- 如何管理数据 
+
+* 如何确认Hashgraph中的分类帐数据
+- Gossip协议传输graph
+- 通过虚拟投票达成共识
+- 由Graph的连接决定
+
+图形连接的缺陷检测到，丢弃Y
+恢复一致性
+原来是X哈希
+Z哈希  
+
+* Swirlds Hashgraph的特点
+- Fair   
+没有人可以操纵交易的顺序  
+区块链允许矿工进行顺序选择  
+
+没有人可以阻止或延迟交易  
+
+
+在区块链上如果交易被大部分矿工拒绝，交易将被延迟
+
+
+- Fast 
+
+只要乐队（相关交易对象）允许，交易是可能的
+由于块大小的限制，比特币每秒限制在七笔交易  
+
+- 可证明 
+
+当事件发生时，所有的社区都在2分钟内知道
+另外，知道其他成员知道
+
+- 拜占庭容错Byzantine 
+一个或几个成员不能阻止批准
+一旦批准 不能取消 
+在区块链中，可以通过从网络分离和扩展链任意地产生冲突
+
+- ACID Compliant 
+批准后，将为每个成员创建固定数据的本地副本 
+
+- 100% Efficient 
+
+在区块链中挖掘旧的和废弃的区块是没有用的，
+在Hashgraph中，块不会变老
+
+- Inexpensive  
+
+工作量证明（解决计算的成员快速分配新块=更快
+有可能避免电脑的成本）
+
+
+- Timestamped  
+
+每笔交易都有一个固定的时间戳（每个成员都是第一个
+收到交易时间的中间值）
+
+即使在区块链中，每个区块都有一个时间戳，但是当你开采时，
+它只有矿工的电脑的时间  
+
+- DoS resistant  
+
+由于Hashgraph不需要工作量证明，所以可以避免由于对领导者节点的攻击而停止整个系统 
+
+- Non-permissioned 
+
+
+股权证明（持有很大比例的成员分发新股）
+由于没有必要保证参与成员的可靠性，任何人都可以加入成员
+你可以加入
+
+* 新闻稿：Ping Identity投资
+
+* 参考  
+.link http://www.swirlds.com/ 
+.link http://www.the-blockchain.com/docs/Overview-of-Swirlds-Hashgraph.pdf 
+.link http://www.swirlds.com/wp-content/uploads/2016/06/2016-05-31-Swirlds-Consensus-Algorithm-TR-2016-01.pdf 
+.link  https://www.linkedin.com/in/leemon-baird/ 
+.link http://leemon.com/ 
+
+
+
+

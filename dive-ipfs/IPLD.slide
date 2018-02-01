@@ -1,0 +1,40 @@
+IPLD
+Subtitle of document
+15:04 2 Jan 2006
+Tags: IPFS, P2P
+
+Wubo
+blockchian engineer, JBI
+myself659@163.com
+https://myself659.github.io  
+
+
+* IPLD
+
+* 特点 
+* 组成 
+
+* 特点 
+- merkle-links  secure, immutalbe  
+- merkle-paths  
+- universal 通用的
+- serialization  
+- cononical 
+
+* 组成
+
+- CID  content ID  一种hash格式
+- Data Model  通知解决方案 
+- Serialization Formats  
+- Tools & Libraries 
+- IPLD Selector  选择子图 
+- IPLD Transformations 用于计算 
+
+
+* CID
+
+- Multihash 
+- 格式  code len value  TLV   T的定义要有共识 
+- 支持自定义算法，自定义值  
+
+

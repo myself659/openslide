@@ -8,6 +8,9 @@ myself659@163.com
 https://myself659.github.io
 
 
+
+
+
 * 内容 
 - 概述 
 - 语法 
@@ -89,12 +92,10 @@ Plan 9操作系统，1983年图灵奖得主，Go语言的共同作者。
 
 
 * 关键字 
-
 - var, const 
 - package, import  
 - func, return, defer 
-- go
-- select, chan 
+- go, select, chan 
 - type 
 - interface
 - struct  
@@ -134,20 +135,20 @@ Once.Do ()调用结束才继续
 
 .code  -numbers once.go  
 
-.play once.go  
+
 
 * panic与recover 
 
 .code -numbers panic.go   
 
-.play panic.go 
+
 
 
 * interface  
 
 .code -numbers interface.go 
 
-.play interface.go  
+
 
 * channel 
 
@@ -259,6 +260,7 @@ goroutine是一种协程
 .link  http://go.yami.io/ Go by example(中文) 
 .link  https://tour.golang.org  Tour of Go
 .link  https://github.com/GoesToEleven/GolangTraining   GolangTraining
+.link  http://hyperpolyglot.org/c   c vs go
 
 - 进阶 
 

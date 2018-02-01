@@ -1,0 +1,40 @@
+DHT
+Subtitle of document
+15:04 2 Jan 2006
+Tags: DHT, P2P
+
+Wubo
+blockchian engineer, JBI
+myself659@163.com
+https://myself659.github.io 
+
+
+* DHT 
+
+- 发展
+- 特点 
+
+* 发展 
+
+- 如何发现节点
+- flooding ttl  慢,控制报文多 
+- CHORD 
+
+* 特点 
+
+- 高可扩展性  highly scable 
+- 每个节点保存m个其他节点信息 
+- 每人节点有一个唯一的ID  
+- 每个节点存储一个数据段 
+- 节点是160位，20个字节 
+- 每个节点知道自己的继承者 
+- 每个节点figer table 
+
+* DHT示例 
+
+
+
+
+
+
+

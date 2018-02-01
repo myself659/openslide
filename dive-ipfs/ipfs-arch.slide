@@ -1,0 +1,95 @@
+IPFS 简介
+Subtitle of document
+15:04 2 Jan 2006
+Tags: IPFS, P2P
+
+Wubo
+blockchian engineer, JBI
+myself659@163.com
+https://myself659.github.io  
+
+
+
+*IPFS节点 
+
+- 基于PKI身份认证 
+- 存储DAG信息 
+- 可以作为server运行，也嵌入到APP
+- 连接其他节点，同时获取更多的节点 
+
+* NODE-CLUSTER 
+
+- https://github.com/flyingzumwalt/decentralized-web-primer/blob/master/SUMMARY.md
+- https://github.com/ipfs/ipfs-cluster/issues/1  
+
+* HA 
+
+- 高可用性 
+
+
+* HASH即链接
+
+内容链接，而不是地址链接  
+
+* IPLD 
+
+* 定义
+
+- 分布式数据结构的hash-chain格式 
+
+*  特点
+- merkle-links  secure, immutable 
+- merkle-paths 
+- universal 
+- serialization  JSON,XML, PB,RLP 
+- canonical  hashing safe  
+
+* merkle-DAG 
+
+merkle-link的技术 
+
+文件系统 目录管理  
+hashlink的管理 
+
+
+
+* IPLD 命令
+
+- ipld cat 
+
+： ipld的命令可以展开联想功能  可以为ipld写开源代码（参考一些代码就可以） linux是如何实现的
+
+* IPRS 
+
+* 定义 
+
+IPRS  用于分类所有的对象 
+
+DNS是用于分类一切东西 
+
+* 描述  
+
+- value 
+- validity  
+- key 公钥用于签名
+- sig  签名摘要信息
+
+* MAZIERES LINK 
+
+：文件 ipfs-hash  ipns-hash  加一层 inderent 
+
+相比较于中心化路径名，统一管理分配   去中心化是自我管理，自我认证 
+
+
+* IPLD  
+
+* DNS
+
+DNS 与之间联系 
+
+
+* Git 版本管理 
+
+
+
+
