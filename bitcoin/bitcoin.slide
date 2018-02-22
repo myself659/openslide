@@ -9,33 +9,42 @@ myself659@163.com
 https://blog.ipds.top  
 
 
-* 比特币 
-
-- 区块链技术的始祖
-- 比特币技术(P2P+BlockChain+PoW+Cryptography)
-
-
-
 
 * 内容  
-
 
 - 基础    
 - 地址
 - 交易
 - PoW共识
-- 帐本 
+- DLT 
 - P2P
 - 安全 
 - 钱包 
+- 扩展性
 - 问题 
+- 总结 
 
 * 基础  
 
 - SHA
+- RIPEMD-160
 - RSA  
 - ECDSA 
- 
+
+* SHA 
+
+- Secure Hash Algorithm 
+- 对称加密技术
+- SHA Family(SHA-1, SHA-2, SHA-3)
+
+* RIPEMD-160 
+
+- 同SHA256比起来生成地址更小
+- 算法很好保证唯一性，减少hash冲突 
+
+
+: https://en.bitcoin.it/wiki/RIPEMD-160
+: https://bitcoin.stackexchange.com/questions/9202/why-does-bitcoin-use-two-hash-functions-sha-256-and-ripemd-160-to-create-an-ad
 
 * RSA 
 
@@ -49,8 +58,8 @@ https://blog.ipds.top
 
 * ECDSA  
 
-- 加解密效率 
-- 安全强度高，占用空间小 
+- 加解密效率高 
+- 相同安全强度，占用空间小
 
 
 * 地址 
@@ -58,54 +67,88 @@ https://blog.ipds.top
 - 创建钱包，就是创建地址
 - 地址即帐户
 - 谁拥有私钥，谁就是地址的主人 
-- 地址是如何生成
+
+
+
+* 生成地址
+
 .image  images/address-2.jpg
 
-：https://wiki.learnblockchain.cn/GLOSSARY.html
+: https://wiki.learnblockchain.cn/GLOSSARY.html
 
 
 * 交易 
 
 - UTXO 
+- 交易类型
 - 交易状态
 - 交易脚本
 - 交易示例 
+- 交易费用
+- 避免双花
 
-：一切都是交易
+: 一切都是交易
 
 
 * UTXO 
 
 - 谁可以使用UTXO
-动用 UTXO 的时候，所有者必须使用私钥对交易进行签名，把交易 + 签名 + 公钥发送给全网络，比特币节点就会对交易进行验证。 
+动用 UTXO 的时候，所有者必须使用私钥对交易进行签名，把交易 + 签名 + 公钥发送给全网络，比特币节点就会对交易进行验证 
 
 : 解决于所有权与使用权问题
+
+* 交易类型 
+
+- P2PKH（Pay-to-Public-Key_Hash）
+- P2PK（Pay-to-Public-Key）
+- P2SH（Pay-to-Script-Hash）
+
 
 * 交易状态  
 
 - 创建成功 
-- 广播成功 
 - 锁定 
+- 广播成功/失败 
 - 丢弃 
 - Pending 阻塞 
 - 确认中
-- 确认成功（6个确认认为成功） 
+- 交易成功（6个确认认为成功） 
 
 * 交易示例 
 
+.image  images/bitcoin-tx.png
+
+: https://blockexplorer.com/tx/5d90437f658da8429fe157efd485d27341c7b025b6ffe6a8a995f530d86f822a
 
 * 交易时序 
 
-* 双花 
+- 交易时间
+
+* 交易费用  
+
+- 矿工决定  
+- 不公平性 
+- 维护系统运行
+
+
+* 避免双花
+
+- 公开帐本
+- 多份帐本备份
+- 验证
+- 竞争记帐
+- 如何发现双花
+- 双花处理
 
 
 * PoW共识 
 
 - 拜占庭问题 
 - 难度 
-- 安全保证，避免了拜占庭问题
+- 提高了作恶成本
+- 牺牲能源
 
-* 帐本 
+* DLT 
 
 - block 
 - block chain 
@@ -118,35 +161,113 @@ https://blog.ipds.top
 
 : https://bitcoinj.github.io/working-with-transactions
 
+* 块内容 
+
+
+.image  images/bitcoin-block.png
+
+: https://en.bitcoin.it/wiki/Genesis_block 
+
+* 块大小
+
+- BTC  1M 
+- BCH  8M
+
+: https://github.com/Bitcoin-ABC/bitcoin-abc/
+
+* block chain  
+
+- 最长链原则 
+- 硬分叉 
+- 软分叉 
+
+* 最长链原则 
+
+- 在最长链添加新区块 
+
+
+* 硬分叉 
+
+- 共识修改
+- 新旧共识不能兼容（向后兼容）
+- 所有的客户端升级或者分叉产生一条新链 
+- 例子：BCH 
+
+* 软分叉 
+
+- 共识修改
+- 新旧公识兼容（向前兼容也向后兼容）
+- 旧共识的客户端不需要升级
+- 例子：P2SH
+
+
 * P2P 
 
+- 节点发现 
+- 节点通信
+
+: https://en.bitcoin.it/wiki/Bitcoin_Core_0.11_(ch_4):_P2P_Network
+: 以太坊有哪些改进 
+
+* 节点发现
+
+- Address database (peers.dat)
+- User-specified (-addnode and -connect) 
+- DNS seeding 
+- Hard-coded seeds 
+- From other peers ("getaddr" and "addr" messages)  
+
+* 节点通信 
+
+- 相互连接 
+- 策略 
 
 * 钱包
 
-本质是私钥 
+- 功能 
+- 技术本质 
+- 类型   
 
-- 类型
-1. HD钱包
-2. 多签名钱包
-3. 
+* 功能
+
+- 数字货币价值确权 
+- 数字货币价值存储
+- 数字货币价值IO
+
+
+* 技术本质
+
+- 拥有私钥就代表拥有钱包
+- 私钥存储
+- 私钥控制价值IO 
+
+重要的事情说三遍：私钥，私钥，私钥
+
+* 类型
+
+- HD钱包
+- 多签名钱包
 
 * 安全 
 
-- 比特币生态 
+- 比特币网络 
 - 个人钱包
 - 交易安全 
 
-* 比特币生态 
+* 比特币网络 
 
 - 51%攻击  
 - 自私挖矿Selfish mining
+- P2P网络安全 
 
 * 个人钱包
 
 - 理论安全，在实践中会出现很多问题 
 - backup，backup，backup
-- 正确的backup姿势 
-- 私钥避免泄漏
+- 私钥，私钥，私钥
+- 重放攻击
+- 认识，意识，学习 
+
 
 
 * 交易安全 
@@ -154,12 +275,29 @@ https://blog.ipds.top
 - 中心化交易所 安全事故常有发生
 - 去中心化交易 也并不安全 
 
-* 未来  
 
-- 扩容已经在进行中 
+* 扩展性  
+
 - 闪电网络 
 - 隔离验证
+- 区块扩容 
 
+: https://en.wikipedia.org/wiki/Bitcoin_scalability_problem#Hard_fork
+
+* 闪电网络  
+
+- 交易与结算分离 
+
+
+* 隔离验证 
+
+- 大表拆小表 
+
+* 区块扩容 
+
+- BCH
+- 大道到简 
+- 问题，并没有真没有解决问题
 
 
 * 问题 
@@ -169,15 +307,22 @@ https://blog.ipds.top
 3. 矿工如何验证交易？
 4. 比特币交易性能问题的原因？
 5. 为什么提高区大小可以提高比特币的交易速度？是不是越大越快呢？
-6.
 
 
-：https://blog.decred.org/2018/01/05/Cryptocurrency-security/
+: https://blog.decred.org/2018/01/05/Cryptocurrency-security/
+
+
+* 总结
+
+
+- 比特币技术(P2P+BlockChain+PoW+Cryptography)
+- 区块链技术的始祖
 
 * 参考 
 
 - 《精通比特币》
-
+.link https://bitcoin.org/bitcoin.pdf  比特币白皮书
+.link https://www.btctrade.com/bitcoin/2066.html 深度解读比特币白皮书
 
 
 
