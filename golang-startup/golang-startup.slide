@@ -10,7 +10,6 @@ https://myself659.github.io
 
 
 
-
 * 内容 
 - 概述 
 - 语法 
@@ -91,7 +90,7 @@ Plan 9操作系统，1983年图灵奖得主，Go语言的共同作者。
 : 不支持指针运算操作
 
 
-* 关键字 
+* 关键字-1
 - var, const 
 - package, import  
 - func, return, defer 
@@ -100,6 +99,8 @@ Plan 9操作系统，1983年图灵奖得主，Go语言的共同作者。
 - interface
 - struct  
 - map 
+
+* 关键字-2
 - range 
 - break、case、continue、for、fallthrough、else、if、switch、goto、default
 

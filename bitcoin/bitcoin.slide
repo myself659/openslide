@@ -72,7 +72,7 @@ https://blog.ipds.top
 
 * 生成地址
 
-.image  images/address-2.jpg
+.image  images/address.png 600 650 
 
 : https://wiki.learnblockchain.cn/GLOSSARY.html
 
@@ -116,7 +116,7 @@ https://blog.ipds.top
 
 * 交易示例 
 
-.image  images/bitcoin-tx.png
+.image  images/Bitcoin-tx.jpg _ 1000
 
 : https://blockexplorer.com/tx/5d90437f658da8429fe157efd485d27341c7b025b6ffe6a8a995f530d86f822a
 
@@ -259,6 +259,28 @@ https://blog.ipds.top
 - 51%攻击  
 - 自私挖矿Selfish mining
 - P2P网络安全 
+
+* 51%攻击 
+- 矿场垄断算力 
+- 量子计算机
+
+* 自私挖矿Selfish mining 
+
+- 定义  
+- 检查
+
+* 定义 
+
+- 矿工不广播自己最新挖出的区块
+
+* 检查
+
+- 块特征（孤立）
+- 时间特征
+
+* P2P网络安全  
+
+- sybil attack 
 
 * 个人钱包
 
