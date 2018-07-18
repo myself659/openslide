@@ -1,4 +1,4 @@
-数字货币钱包
+数字货币钱包交流
 
 15:04 30 April 2018
 Tags: crytocurrency, blockchain, wallet 
@@ -6,7 +6,7 @@ Tags: crytocurrency, blockchain, wallet
 沉风
 
 myself659@163.com
-https://blog.ipds.top  
+  
 
 
 * 内容  
@@ -41,7 +41,7 @@ https://blog.ipds.top
 
 .image  images/cryto-market-2018.png    350  1000
 
-- 结论： 442283000000/1599410000=276 
+- 对比： 442283000000/1599410000=276 
 
 * 交易量 
 
@@ -57,23 +57,22 @@ https://blog.ipds.top
 
 .image  images/btc-vol-2018.png   400 1000
 
-: 数据来源 https://www.cryptocurrencychart.com
+- 对比： 7222280000/18332200=393  
+
 
 
 *  用户 
 
 - 用户一直在增长 
 
-.image  images/wallet-user.png  
+.image  images/wallet-user.png   560 1000
 
 
 *  结论 
 
 .link  https://medium.com/@mccannatron/12-graphs-that-show-just-how-early-the-cryptocurrency-market-is-653a4b8b2720  加密数字货币市场处于早期阶段
 
-*  问题 
-
--  用什么样产品抢占市场
+*  数字货币市场需要数字货币钱包 
 
 .image  images/crypto-wallets.jpg
 
@@ -82,23 +81,23 @@ https://blog.ipds.top
 * 数字货币钱包
 
 - 定义  
-- 理解 
-- 竞争对手
-- 战略  
+- 分解 
+- 战略
+- 竞品  
 
 * 定义  
 
 - A cryptocurrency wallet stores the public and private keys which can be used to receive or spend the cryptocurrency(来自wiki)
-- 技术本质是私钥
-- 连接人与数字资产 
+- 技术本质: 私钥
+- 商业价值：连接人与数字资产 
 - 产品地位：数字资产市场上的支付宝，微信支付
 
 
-* 理解 
+* 分解 
 
 - 价值模型
 - 功能分解
-- 特征模型 
+- 特性模型 
 
 * 价值模型 
 
@@ -128,63 +127,97 @@ https://blog.ipds.top
 
 * 安全可靠 
 
-- 
+- 安全(用户意识，数据，区块链底层，运行环境的安全)
+- 可靠(数据，服务，防DDOS)
 
 * 简单友好
 
+- 使用简单，降低用户使用门槛
+- 用户体验
+- 追求极简功能 
+
 * 价值服务
 
+- 价值增值 
+- 价值流通
+- 价值消费
+
+
 * 生态系统 
+- 结构
+- 路线 
+
+* 结构 
+.image images/wallet-ecosytem.png  600  800
+
+* 路线 
+
+- 从做用户的工具开始
+- 连接器
+- 平台
+- 生态 
 
 
 
+* 战略与发展 
 
-* 战略 
-
-- 用户战略  
-- 技术战略 
-
+- 用户方向  
+- 技术方向
+- 社区方向
+- 量化指标 
 
  
-- 技术上三个方向：多链方向、价值方向、用户方向
-- 追求更多用户，培养更多粉丝（小米）   
-
 * 用户战略  
 
-- 追求更多用户，培养更多粉丝
-- 更多 
+- 满足用户需求，提高用户体验，追求更多用户，培养更多粉丝
+- 欲先取之必先予之--Caddy
 
 * 技术战略  
 
 - 多链
 - 价值
 - 用户 
-- 量化 
 
 
 * 多链  
 
-- EOS 
-- BCH
-- ADA 
 
+- BTC(30.00%)
+- ETH(14.95%)
+- LTC(2.13%)
+- ETC(1.16%)
 
+- EOS(8.37%) 
+- BCH(4.77%)
+- ADA(0.59%)
+- NEO(0.55%)
+
+.link https://coinmarketcap.com/currencies/volume/24-hour/ 24小时交易量排行榜
 
 * 价值
 
 - 提供更多地价值通道(交易所, OTC...),让价值更好地流通 
-- 提供更多价值服务(行情，资讯，个性化)
+- 提供更多价值服务(行情，资讯，个性化...)
 
 * 用户 
 
-- 用户体验(UI、交互...) 
+- 用户体验(UI、交互、教程、提示...) 
 - 用户帐户体系
-- 用户消息(通知，IM)
+- 用户消息(通知、IM)
+- 用户个性化
+
+: 注释 
 
 
-：https://coinmarketcap.com/currencies/volume/24-hour/
+* 社区方向 
 
-* 量化 
+- 公链团队合作 
+- 产品与技术影响力宣传
+- 第三方应用(糖果...)
+- 逐步开源客户端源代码
+
+
+* 量化指标 
 
 - 用户指标 
 - 经济指标
@@ -202,7 +235,7 @@ https://blog.ipds.top
 
 * 经济指标  
 
-- 链数量 
+- 支持链数量，币数量 
 - 日存储价值总量
 - 日交易次数 
 - 日交易量
@@ -211,71 +244,25 @@ https://blog.ipds.top
 
 * 竞品 
 
+- imtoken: 去中心化钱包(转帐、交易、DApp、ETH)
+- bitpay: 去中心化比特币钱包(转帐、法币(visa)、交易)
+- ONE: 去中心化钱包(转帐、交易、IM、one链节点)
+- KCASH: 去中心化钱包(转帐、红包)
+- MDS: 去中心化钱包(转帐、交易)
 .link  http://tokenwallet.cc/ 数字货币钱包排行榜
 
 
+* 优势  
 
+- 多链+ERC20代币自动发现
+- 简单
 
-* imtoken 
+.image images/wallet-simple.png 
 
-- 用户数
-- 链数量
-- 安全性 
-- 交易所  
+* 谢谢 
 
+欢迎指正与交流
 
-* 优势 
-
-- 底层链能力 
-- 合作与生态 （EOS）
-- 多链 
-- 安全（理论 使用 ）  
-- 简单 
-
-
-
-钱包是交易 
-
-* 钱放到哪里最安全？
-
-
-* 钱包 vs 交易所 
-
-- 安全 
-- 方便 
-
-
-
-* 钱包技术竞争点 
-
-- 底层链能力 
-- 技术稳定性 
-- 高可用
-- 高并发 
-
-
-* 亮点 
-
-- 安全可靠
-- 简单便捷  
-- 多链支持
-- 价值增值
-- 生态圈
-
-：金字塔  四象限  
- 
-
-
-* 商业模型 
-
-- 渠道的入口  
-- 竞价排名  
-
-* 战争才开始 
-
-
-- 后发优势 
-- 实现垄断这个目标就要先主导一个小的利基市场，在这个基础上扩大，直到达到你的预想的长远目标 
 
 
 

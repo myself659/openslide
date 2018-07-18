@@ -1,0 +1,45 @@
+BCH技术系列-1
+cashaddr篇
+15:04 16 May 2018
+Tags: BCH, blockchain, cashaddr  
+
+沉风
+
+myself659@163.com
+https://blog.ipds.top
+
+
+* 内容  
+
+- 背景 
+- 问题 
+- 方案 
+
+* 背景 
+
+- address 
+- BTC vs BCH 
+
+* address
+
+- qq8qg3npld28e33wc5gd55tve80pj645zvj7tx6krl 
+
+.link  https://cashaddr.bitcoincash.org/ cashaddrconvert  
+
+* BTC vs BCH 
+
+.video images/who-is-dad.mp4  video/mp4
+
+
+
+
+
+
+
+* 参考 
+
+.link https://bitsonline.com/bitcoin-cash-changes-address-format-to-prevent-costly-confusion-with-btc/  Bitcoin Cash Changes Address Format to Prevent Costly Confusion With BTC
+.link https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md  cashaddr 
+.link https://github.com/schancel/cashaddr-converter  cashaddr-converter
+
+

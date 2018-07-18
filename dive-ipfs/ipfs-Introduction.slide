@@ -1,0 +1,149 @@
+下一代互联网基础：IPFS
+简介篇
+15:04 29 May 2018
+Tags: IPFS, P2P, HTTP
+
+沉风
+
+myself659@163.com
+https://blog.ipds.top  
+
+* 内容 
+
+- HTTP问题
+- IPFS概况
+- IPFS技术
+- IPFS优势
+- IPFS应用
+- IPFS未来 
+
+
+* HTTP问题 
+
+* HTTP很脆弱  
+
+- SPOF单点故障  
+- MITM攻击
+- DDOS攻击
+- 隐私问题
+- 404
+
+
+
+* HTTP导致超级中心化 
+
+- 美国：FLAG 
+- 中国：BAT 
+
+* HTTP低效 
+
+- 重复 
+- 浪费 
+
+
+* IPFS概况 
+
+- 全称：The InterPlanetary File System（星际文件系统）
+- 由Juan Benet在2013.12开始发起，属于Protocol Labs
+- IPFS已经在线上运行
+- firefox/chrome支持IPFS：IPFS Companion 
+- 商业化：filecoin还在开发中
+
+* 目标 
+
+.image  images/ipfs-aim.png 
+
+* IPFS技术 
+
+- 要点
+- 技术栈 
+- 数据角度
+
+* 要点 
+
+- Versioned File-版本化文件
+- Content Addressed-内容寻址
+- P2P File System-P2P文件系统
+
+
+* 技术栈 
+
+.image  images/ipfs-model.png  600 1000
+
+
+* 数据角度
+
+.image  images/ipfsstack.png  600  1000
+
+
+* IPFS优势 
+
+- Faster
+- Safter 
+- Distribute
+- Permanent
+- Open 
+- Low-cost
+- Transport independence
+- Dataformat independence
+- Connection robustness
+
+
+* IPFS应用 
+
+
+
+* 区块链存储方案 
+
+- 与ETH,ETC集成
+
+
+* 全球统一命名空间的文件系统
+
+- IPFS(不可变)
+- IPNS(可变) 
+
+* 个人文件系统
+
+- 除了git之外另一个选择 
+- 版本管理，发布，备份，更新，权限控制 
+
+* CDN 
+
+- IPFS版本的迅雷网心 
+
+* Web application 
+
+- https://d.tube/
+- https://ipfs.io/
+- 更多 
+.link https://www.reddit.com/r/ipfs/comments/63ev6h/list_of_ipfs_websites/  List of IPFS websites 
+
+* 数据库 
+
+.link  https://github.com/orbitdb/orbit-db  orbit-db
+
+* IPFS未来 
+
+- 下一代互联网基础 
+
+
+* 欢迎交流，一起进步 
+
+
+
+
+* 参考 
+
+.link  https://ipfs.io/ipfs/QmR7GSQM93Cx5eAg6a6yRzNde1FQv7uL6X1o4k7zrJa3LX/ipfs.draft3.pdf  IPFS白皮书
+.link https://blog.neocities.org/blog/2015/09/08/its-time-for-the-distributed-web.html  HTTP is obsolete. It's time for the Distributed Web
+.link https://blog.acolyer.org/2015/10/05/ipfs-content-addressed-versioned-p2p-file-system  IPFS – Content Addressed, Versioned, P2P File System
+.link  https://medium.com/@ConsenSys/an-introduction-to-ipfs-9bba4860abd0  An Introduction to IPFS
+.link  https://ipfs.io/ipfs/QmNhFJjGcMPqpuYfxL62VVB9528NXqDNMFXiqN5bgFYiZ1/its-time-for-the-permanent-web.html HTTP is obsolete. It's time for the Distributed Web
+.link https://github.com/ipfs/awesome-ipfs  awesome-ipfs 
+
+
+
+
+
+

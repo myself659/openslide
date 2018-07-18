@@ -1,16 +1,16 @@
-IPFS 简介
+IPFS架构
 Subtitle of document
 15:04 2 Jan 2006
 Tags: IPFS, P2P
 
 Wubo
-blockchian engineer, JBI
+
 myself659@163.com
 https://myself659.github.io  
 
 
 
-*IPFS节点 
+* IPFS节点 
 
 - 基于PKI身份认证 
 - 存储DAG信息 
@@ -88,7 +88,9 @@ DNS是用于分类一切东西
 DNS 与之间联系 
 
 
-* Git 版本管理 
+* Git 版本管理
+
+
 
 
 

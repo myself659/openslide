@@ -4,7 +4,7 @@ Subtitle of document
 Tags: IPFS, P2P
 
 Wubo
-blockchian engineer, JBI
+
 myself659@163.com
 https://myself659.github.io  
 
@@ -27,7 +27,6 @@ https://myself659.github.io
 - The InterPlanetary File System  
 - 一句话：Content Addressed, Versioned, P2P File System
 - 由Juan Benet在2013.12开始发起，属于Protocol Labs  
-- 技术组合：DHT, BitTorrent, Git,SFS
 - 数据模型: Merkle DAG 
 - IPFS=DHT+BT+Git+SFS+Web 
 - Juan Benet 
@@ -195,6 +194,7 @@ peer routing
 
 
 * 大文件处理  
+- 划分 
 
 
 * Design Content  

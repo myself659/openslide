@@ -31,6 +31,8 @@ https://myself659.github.io
 - 数据模型: Merkle DAG 
 - IPFS=DHT+BT+Git+SFS+Web 
 - IPFS for anydata  
+- Juan Benet 
+- a protocol to upgrade the web  
 
 
 .link [https://github.com/ipfs] github开源地址
@@ -51,6 +53,10 @@ Permanent
 Smarter
 Offline
 OPEN
+Serve data from everywhere 
+Serve data to everywhere
+随时随地访问网络
+减少网络带宽开销（减少网络传输的跳数 ）
 
 * HTTP 
 - 单个server，高可用性低，或者需要维护高可用性 
@@ -103,8 +109,11 @@ greater than the sum of its parts
 - IPFS支持同时从多台机器下载一个文件（文件会被打散）
 - 相比于HTTP方式下载，IPFS方式下载文件消费带宽少
 - 在IPFS，没有数据的重复，所以能够有效地分散
+- 隐私问题，没有保证的隐私保护
+- 404找不到 
 
-： 常见的面试题，如何提高文件下载速度？ 
+： 常见的面试题，如何提高文件下载速度？
+： AWS s3故障 https://www.theverge.com/2017/2/28/14765042/amazon-s3-outage-causing-trouble 
 
 * 版本管理  
 
@@ -140,6 +149,15 @@ greater than the sum of its parts
 * 去中心化命名空间 
 
 ： 还再深入思考，解决名称冲突 
+
+* IPFS store 
+- key-value stores 
+- traditional relational databases
+- linked data triple stores 
+- linked document publishing systems 
+- linked  communications  platform 
+- cryptocurrency  blockchains 
+
 
 * IPFS设计 
 
@@ -195,6 +213,8 @@ Self-Certified Filesystems - SFS
 
 * 查找内容的流程 
 
+peer routing 
+
 地址路由 + 内容路由
 路由开销加大 
 
@@ -238,6 +258,8 @@ Defaults to a DHT, but is swappable
 
 * 思考更多的技术细节  
 
+1. 版本兼容 
+2. ipfs-cli 与ipfs-daemon之间的版本需要一致 
 
 
 * 展望 
@@ -249,16 +271,68 @@ Defaults to a DHT, but is swappable
 ： 算一笔帐 
 
 
+* IPFS背后的精神  
 
+- 技术上百ming神功 
+- 海纳百川
+- 团队在2013年就开始，到现在才考虑商业化 
+- 伟大的愿景 技术上取代HTTP，兼容HTTP 商业开启下一代去中心化存储  
 
 * 参考  
 
 1. https://github.com/ipfs/specs/tree/master/architecture 
 2. https://github.com/multiformats/multihash
 3. https://github.com/libp2p/specs 
-4. https://www.icoage.com/?p=D&id=38 
+4. https://www.icoage.com/?p=D&id=38
+5. https://ipfs.io/ipfs/QmNhFJjGcMPqpuYfxL62VVB9528NXqDNMFXiqN5bgFYiZ1/its-time-for-the-permanent-web.html 
+6. http://www.qukuaiwang.com.cn/news/1838.html 
+7. http://datamarket.atman360.com/120703 
+8. http://mashable.com/2017/04/24/is-silicon-valley-new-internet-possible-or-not/#pNDSCepE3Pqo
 
 
+* 相关项目 
+
+- Storj <https://storj.io/> 
+- Gitchain <http://gitchain.org/>
+- ZeroTier One <https://www.zerotier.com/> 
+- MaidSafe <https://maidsafe.net>  
+- SIA < http://sia.tech/> 
+- Upspin <https://upspin.io> 
+- ZeroNet <https://zeronet.io/> 
+- BigchainDB  https://www.bigchaindb.com/
+- Ethereum Swarm  https://www.ethereum.org/
+
+* Storj  
+
+Blockchain-based, 
+end-to-end encrypted, 
+distributed object storage, where only you have access to your data.
+
+with a blockchain added to create a marketplace 
+for buying or renting out disk space on the network
+
+*  SIA 
+
+与storej类似 
+
+* MaidSafe  
+
+主打安全
+A secure home for all your data 
+
+* ZeroNet  
+
+Open, free and uncensorable websites, 
+using Bitcoin cryptography and BitTorrent network
+
+* Ethereum Swarm 
+
+Swarm is a distributed storage platform and content distribution service, 
+a native base layer service of the ethereum web 3 stack.
+The primary objective of Swarm is to provide a sufficiently decentralized 
+and redundant store of Ethereum’s public record,
+in particular to store and distribute dapp code and data 
+as well as block chain data.
 
 * Tips 
 
@@ -267,7 +341,8 @@ Defaults to a DHT, but is swappable
 - 架构篇   原理落地到代码的指导  （重点）
 - 实践篇   ipfs 各种命令实践 
 - 应用篇  案例case github 
-- 未来篇  前景分析 
+- 未来篇  前景分析
+- 生态篇  
 
 * 未来篇 
 
@@ -277,13 +352,41 @@ IPFS+Filecoin = ？
 
 区块链让商业流动更快
 
+密码学与P2P 作为点对点通信的协议 
+
 云存储 云安全  
+* 可以为IPFS作些事情  
+
+- ipfs add 需要点击确认 
+- ipfs add 需要commit确认 类似git 
+- ipfs 增加命令 方便查看当前目录下的内容  
 
 
 * HTTP的不足 
 
 ：洗脑一番 发现基于http的互联网有很多问题  而ipfs能够解决很多问题 
 
+* 网络  
+
+- 网络天生就应该是分布式 
+
+* 相关代码 
+
+- 自描述的数据类型
+.link multiformats  https://github.com/multiformats/multihash  
+- secure data structures
+.link  IPLD  https://github.com/ipld 
+- distributed naming  
+
+.link  https://github.com/ipfs/specs  IPNS  
+
+- Distributed and fast updates 
+
+.link  Pubsub  https://github.com/libp2p/pubsub 
+
+- Process addressing 
+
+.link libp2p https://github.com/libp2p
 
 
 

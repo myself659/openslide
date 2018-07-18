@@ -1,0 +1,238 @@
+下一代互联网基础：IPFS
+简介篇
+15:04 29 May 2018
+Tags: IPFS, P2P, HTTP
+
+沉风
+
+myself659@163.com
+https://blog.ipds.top  
+
+
+* IPFS实现 
+
+- Identities  
+- Network 
+- Routing 
+- Exchange
+- Objects
+- Files
+- Naming 
+
+* Identities  
+
+- 管理节点身份生成和验证 
+
+* Identities 
+
+- 用于标识节点
+- 公钥的PoW哈希值
+
+* multihash格式 
+
+具体格式如下：
+
+<function code><digest length><digest bytes> 
+
+- 算法选择灵活性 
+- 保证安全 
+
+
+
+.link 
+
+* Network  
+
+- 管理与节点的连接及底层网络协议
+
+* 特点 
+
+- 节点多
+- 分布广
+- 协议多 
+
+* 优势  
+
+- Transport  IPFS与传输协议无关 
+- Reliability 支持网络协议切换保证传输的可靠性
+- Connectivity  支持NAT 
+- Integrity  哈希校验 
+- Authenticity  使用HMAC和发件人的公钥，消息
+可以检查可靠性（可选）
+
+* multiaddr格式 
+
+
+- 就像multihash格式一样，网络地址是
+以multiaddr格式表达
+- 与IP无关 
+
+
+* Routing 
+
+- DHT路由信息管理
+
+* 两大功能  
+
+- 查找其他节点 
+- 查找内容 
+
+* 路由表信息 
+
+- 1 KB或更少的小数据直接在DHT上，更大的数据存在节点信息与元数据
+
+
+* 路由接口 
+
+type IPFSRouting interface {
+FindPeer(node NodeId)
+// gets a particular peer's network address
+SetValue(key []bytes, value []bytes)
+// stores a small metadata value in DHT
+GetValue(key []bytes)
+// retrieves small metadata value from DHT
+ProvideValue(key Multihash)
+// announces this node can serve a large value
+FindValuePeers(key Multihash, min int)
+// gets a number of peers serving a large value
+}
+
+
+* Exchange 
+
+- 使用块交换协议（BitSwap）进行高效块分配 
+
+
+* Objects  
+
+- 具有链接的内容寻址不可更改对象的Merkle DAG
+
+BitSwap：基于BitTorrent改进的块交换协议
+have_list  本节点提供的区块
+want_list  本节点需要的区块
+与BitTorrent不同  不需要种子文件，可以自由交换
+
+对于简单的信用系统，BitSwap具有以下效果
+鼓励分享 打击自私 
+
+负债增加的情况，限制 
+BitTorrent：tit-for-tat 
+BitTyrant：选择Peer for Selfish的策略，强调速度 
+BitThief：我只是不会上传的策略
+PropShare：根据拍卖模式按比例分享
+在最大化交换性能的同时，可以仅使用节点和未知数
+它必须抵制战略
+r是衡量信任的标准，也是对民间攻击的防御：过去很多
+慷慨的交换数据的可信节点，对于新手来说非常重要
+
+* ledger 
+
+-  在建立连接时候交换帐本
+- 不一致，则重新初始化 
+
+* BitSwap连接示例 
+
+- open：发送帐本，并建立连接 
+- send： 发送want_list,交换块数据 
+- close：对端连接关闭  
+- Ignored：超时与欺骗 
+
+* Object 
+
+* Merkle DAG 
+
+- Content Addressing: 所有内容和链接都是唯一的，由multihash校验和指定
+- 防篡改：如果数据被篡改或损坏，可以通过校验来检测
+- 数据去重：具有相同内容的数据不会被重复保存，因为它将完全相同的哈希值
+
+* IPFS链接和对象格式 
+
+type IPFSLink struct {
+Name string
+// name or alias of this link
+Hash Multihash
+// cryptographic hash of target
+Size int
+// total size of target
+}
+type IPFSObject struct {
+links []IPFSLink
+// array of links
+data []byte
+// opaque content data
+}
+
+
+- 所有对象存储在某个对象的物理存储中 
+- 缓存中 
+- pin将文件存放在本地 
+- 要将objecet发布到世界上，只需将密钥添加到DHT
+- 如果你更新版本，它将是一个不同的objecet，所以你需要另一个objecet来跟踪它
+
+* object加密 
+
+- IPFS在object进行加密
+- 自动验证并登录用户的钥匙链 
+
+
+
+
+* File 
+
+* object类型 
+
+- block: a variable-size block of data 
+- list: a collection of blocks or other lists
+- tree: a collection of blocks, lists, or other trees
+- commit: a snapshot in the version history of a tree 
+
+
+
+- 由Git启发的版本化文件系统层次结构 
+
+
+* Naming
+
+https://gateway.ipfs.io/ipfs/QmQEcNzTMj8p1tFkqsFTJY3Tz2FGFwjNYrqXeYSvhrvgpL
+
+
+- 不可变更与重命名
+- 更新blog为例
+- 通过使用SFS的命名模式，您可以在全局命名空间中创建一个具有自我认证的“可变”名称
+
+- 首先，NodeId = hash（node.PubKey） 
+- 为所有用户提供一个以“NodeId：/ ipns / <NodeId>”为前缀的“可变”命名空间
+- 用户可以在此路径中发布使用其私钥签名的对象
+- 当另一个用户获得对象时，确认签名是否与公钥和NodeId相匹配，从而实现可变路径
+- 使用“ipns”和“ipfs”作为另一个前缀，以便可以轻松识别为可变或不可变
+- 由于IPNS的名称不是内容的地址，因此我们使用路由系统进行发布
+- 作为IPFS发布为普通的不可变对象 
+- 将哈希值作为元数据发布到路由系统 
+
+* IPNS人性化
+
+
+
+* IPFS未来 
+
+- 全球文件系统（ipfs/ipns)
+- 个人挂载文件系统（版本管理，发布，备份，更新）
+- 加密文件与数据共享系统  
+- 作为所有人的版本管理软件包软件 
+- 作为虚拟机的根文件系统 
+- 作为数据库：应用程序可以直接写入Merkle DAG数据模型并获得所有版本控制，缓存和分发IPFS提供
+- 作为一个链接和加密的通信平台
+- website 
+- CDN 
+- 与区块链配合，提供大文件存储 
+
+
+
+
+
+
+
+
+* 参考 
+
+.link  https://ipfs.io/docs/getting-started/ IPFS Getting Started
