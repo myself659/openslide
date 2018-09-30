@@ -8,8 +8,38 @@ Tags: bitcoin, blockchain
 myself659@163.com
 https://blog.ipds.top 
 
+* 内容  
 
+- 定义
+- 组成
+- 架构
+- 概念
 
+* 定义  
+
+- 全球通用计算平台 
+
+* 组成
+
+* 架构  
+
+* 概念 
+
+- 帐户 
+- 交易
+- gas
+- block
+- blockchain
+- EVM 
+
+ 
 * 问题
 
 1. 为什么要引入叔节点？
+2. Eth挖矿与Bitcoin有什么不同？
+
+
+* 参考 
+
+- 白皮书
+- 黄皮书 
