@@ -1,0 +1,80 @@
+谈谈哈希
+
+15:04 12 Oct 2018
+Tags: hash, blockchain 
+
+沉风
+
+myself659@163.com
+https://blog.ipds.top
+
+* 内容 
+
+- hash函数
+- 应用 
+- hash算法
+- hash冲突 
+- hash安全
+
+* hash函数 
+
+- h = H(m)
+- H(m)易于计算
+- 很难由h推导出m
+- h=H(m1)=H(m1)
+- 不修改m，H(m)结果保证不变
+
+
+* 应用
+
+- 压缩数据 
+- 验证数据是否更改
+
+* 压缩数据 
+
+- Alice -> 1 
+- Bob -> 2  
+
+* hash算法  
+
+- MD5
+- SHA-1
+- SHA-2 
+
+* MD5 
+– 128 bit hash, 32 hex-digit output
+– Older and most commonly used in forensics
+– Developed in 1992
+– Fast!
+– Weaknesses being exploited now
+
+* SHA-1  
+– 160 bit hash, 40 hex-digit output
+– NIST Secure Hashing Algorithm
+– Has potential weaknesses
+
+* SHA-2
+– NIST Secure Hashing Algorithm Family
+– Weaknesses are theoretical… for now
+
+
+* SHA-3
+
+标准还在制定
+
+* hash冲突
+
+- 必然性 pigeonhole principle
+- 定义 当m1!=m2, H(m1)= H(m2)
+
+* hash安全
+
+- 攻击 
+
+
+* 攻击  
+
+- Collision Attack 
+- Chosen Prefix Collision Attack 
+- preimage attack 
+- second preimage attack

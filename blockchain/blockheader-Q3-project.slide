@@ -1,6 +1,6 @@
-BlockHeader Q3项目汇报
+BlockHeaders Q3项目汇报
 
-15:04 30 Sept. 2018
+15:04 30 Sept 2018
 Tags: 区块链, 项目 
 
 吴勃 
@@ -21,20 +21,20 @@ https://blog.ipds.top
 - 前期工作
 - 现状
 
-* 需求与问题 
+* 需求与问题
 
-bitcoin->blackcoin->wincoin,存以以下问题
+代码历史: bitcoin->blackcoin->wincoin,存在以下问题
+
 - 潜在的安全风险
 - 代码落后，缺少生态与周边应用
 - 维护成本高
 - 性能低，扩展性差
+- 盗币问题
 
 
 : 区块链的问题
 
 * 需求与问题 
-
-一句话：
 - 不断发展的市场与落后技术方案的之间矛盾 
 
 
@@ -47,25 +47,31 @@ bitcoin->blackcoin->wincoin,存以以下问题
 
 * WinCoin升级方案设计 
 
-分为三阶段：
 - ETH Fork
 - Wallet
-- transfer Asset    
+- Transfer Asset    
 
 
 * 51%攻击分析与解决方案
 
-.image images/wincoin-51attack.jpg
+.image images/wincoin-51attack.jpg 800 600
+
 
 * WinCoin方案调研
+
+避免接到一个炸弹
+.image  images/bomb.jpg  300 _
 
 - 代码审核
 - 代码编译
 - 系统运行
 
+
+
 * 现状
 
-- 报价与合同阶段
+- 技术交流与初步方案已结束，报价中
+
 
 
 * 澳门博彩 
@@ -82,14 +88,13 @@ bitcoin->blackcoin->wincoin,存以以下问题
 
 * 前期工作 
 
-
-- 区块链随机算法设计
+- 联盟链：随机数算法研究
 
 
 * 现状
 
-- 报价
-
+- 技术交流与初步方案已结束，报价中
+- 确定需求：钱包，交易所，联盟链
 
 * TeacherAccess
 
@@ -100,15 +105,25 @@ bitcoin->blackcoin->wincoin,存以以下问题
 
 * 需求与问题  
 
+- 解决学校招外教问题：时间长，成本高，流程多，师资差
+- 利用区块链的激励，实现社区变现及业务扩展
+- 布局区块链行业
+
 * 前期工作
+
+- 客户沟通与需求分析
+- TeacherAccess产品分析
+
 
 * 现状
 
+- 达成初步合作意向
+- 确定需求：白皮书，网站
 
 * 谢谢 
+欢迎指导与交流
+.image  images/kaipao-1.jpg
 
-.image  images/kaipao.jpg
- 
 
 
 

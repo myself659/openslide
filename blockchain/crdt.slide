@@ -1,0 +1,57 @@
+CRDT分享
+
+18:04 12 Sept 2018
+Tags: hash, blockchain 
+
+沉风
+
+myself659@163.com
+https://blog.ipds.top
+
+
+* 内容   
+- 概念 
+- 原理 
+- 应用
+
+* 概念
+
+- 目的 
+- 范围
+- 定义
+
+* 目的
+
+conflict-free replicated data type
+为排序工作，提供比较方法，作为排序的判断标准
+
+* 范围 
+
+order theory
+
+* 定义 
+
+运算与表达式 
+
+- a <= b  小于等于 
+- a ∥ b   不可比较
+- a∨b  join 
+- ≤ as 位于
+≤  as “happened-before
+: 集合理论 
+
+* 理论 
+
+total order  
+partial order 
+vector clocks
+
+* 三大定律 
+- 交换定律
+- 结合定律
+- 幂等性
+
+
+* 参考
+
+
